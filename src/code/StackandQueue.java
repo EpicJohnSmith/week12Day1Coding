@@ -1,25 +1,24 @@
 package code;
-
-public StackandQueue {
 	
-
 	interface Stack<T> {
     void push(T item);
     T pop();
     T peek();
     boolean isEmpty();
-}
+	}
 
 	interface Queue<T> {
     void enqueue(T item);
     T dequeue();
     T front();
     boolean isEmpty();
-}
+	}
 
-	class StackandQueue<T> {
+	class DoublyLinkedList<T> 
+	{
 
-    protected class Node {
+    protected class Node
+    {
         T data;
         Node prev, next;
 
@@ -32,11 +31,15 @@ public StackandQueue {
     protected Node tail;
     protected int size = 0;
 
-    void addFirst(T data) {
+    void addFirst(T data)
+    {
         Node node = new Node(data);
-        if (head == null) {
+        if (head == null)
+        {
             head = tail = node;
-        } else {
+        } 
+        else
+        {
             node.next = head;
             head.prev = node;
             head = node;
@@ -44,11 +47,15 @@ public StackandQueue {
         size++;
     }
 
-    void addLast(T data) {
+    void addLast(T data)
+    {
         Node node = new Node(data);
-        if (tail == null) {
+        if (tail == null)
+        {
             head = tail = node;
-        } else {
+        }
+        else
+        {
             tail.next = node;
             node.prev = tail;
             tail = node;
@@ -56,14 +63,18 @@ public StackandQueue {
         size++;
     }
 
-    T removeFirst() {
+    T removeFirst()
+    {
         if (head == null) return null;
 
         T data = head.data;
 
-        if (head == tail) {
+        if (head == tail)
+        {
             head = tail = null;
-        } else {
+        } 
+        else 
+        {
             head = head.next;
             head.prev = null;
         }
@@ -72,7 +83,8 @@ public StackandQueue {
         return data;
     }
 
-    T removeLast() {
+    T removeLast()
+    {
         if (tail == null) return null;
 
         T data = tail.data;
@@ -88,11 +100,13 @@ public StackandQueue {
         return data;
     }
 
-    int size() {
+    int size()
+    {
         return size;
     }
 
-    public void printList() {
+    public void printList()
+    {
         Node curr = head;
         System.out.print("[ ");
         while (curr != null) {
@@ -103,7 +117,7 @@ public StackandQueue {
     }
 }
 
-public class MyStack<T> extends StackandQueue<T> implements Stack<T> {
+class MyStack<T> extends DoublyLinkedList<T> implements Stack<T> {
 
     @Override
     public void push(T item) {
@@ -126,7 +140,7 @@ public class MyStack<T> extends StackandQueue<T> implements Stack<T> {
     }
 }
 
-public class MyQueue<T> extends StackandQueue<T> implements Queue<T> {
+class MyQueue<T> extends DoublyLinkedList<T> implements Queue<T> {
 
     @Override
     public void enqueue(T item) {
@@ -149,8 +163,8 @@ public class MyQueue<T> extends StackandQueue<T> implements Queue<T> {
     }
   } 
 
-}
-public class MainDemo {
+public class StackandQueue
+{
 
     public static void main(String[] args) {
 
