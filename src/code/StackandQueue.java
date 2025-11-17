@@ -168,7 +168,7 @@ public class StackandQueue
 
     public static void main(String[] args) {
 
-        System.out.println("===== STACK TEST =====");
+        System.out.println(" STACK TEST ");
         MyStack<Integer> stack = new MyStack<>();
         stack.push(10);
         stack.push(20);
@@ -180,7 +180,7 @@ public class StackandQueue
         stack.printList();
 
 
-        System.out.println("\n===== QUEUE TEST =====");
+        System.out.println("\n QUEUE TEST ");
         MyQueue<String> queue = new MyQueue<>();
         queue.enqueue("A");
         queue.enqueue("B");
