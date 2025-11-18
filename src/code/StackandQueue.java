@@ -1,20 +1,22 @@
 package code;
 	
-	interface Stack<T> {
+	interface Stack<T>
+	{
     void push(T item);
     T pop();
     T peek();
     boolean isEmpty();
 	}
 
-	interface Queue<T> {
+	interface Queue<T>
+	{
     void enqueue(T item);
     T dequeue();
     T front();
     boolean isEmpty();
 	}
 
-	class DoublyLinkedList<T> 
+	class DoublyLinkedList<T> // Needed help with AI here
 	{
 
     protected class Node
@@ -22,7 +24,8 @@ package code;
         T data;
         Node prev, next;
 
-        Node(T data) {
+        Node(T data)
+        {
             this.data = data;
         }
     }
@@ -33,7 +36,7 @@ package code;
 
     void addFirst(T data)
     {
-        Node node = new Node(data);
+        Node node = new Node(data); // Had some help with AI documentation here
         if (head == null)
         {
             head = tail = node;
@@ -89,7 +92,8 @@ package code;
 
         T data = tail.data;
 
-        if (head == tail) {
+        if (head == tail)
+        {
             head = tail = null;
         } else {
             tail = tail.prev;
@@ -105,7 +109,7 @@ package code;
         return size;
     }
 
-    public void printList()
+    public void printList() // Needed a little help over on this part too
     {
         Node curr = head;
         System.out.print("[ ");
@@ -117,56 +121,67 @@ package code;
     }
 }
 
-class MyStack<T> extends DoublyLinkedList<T> implements Stack<T> {
+class MyStack<T> extends DoublyLinkedList<T> implements Stack<T> // Had to look up what the Override meant, now I understand
+{
 
     @Override
-    public void push(T item) {
+    public void push(T item)
+    {
         addLast(item);
     }
 
     @Override
-    public T pop() {
+    public T pop()
+    {
         return removeLast();
     }
 
     @Override
-    public T peek() {
+    public T peek()
+    {
         return (tail != null) ? tail.data : null;
     }
 
     @Override
-    public boolean isEmpty() {
+    public boolean isEmpty()
+    {
         return size == 0;
     }
 }
 
-class MyQueue<T> extends DoublyLinkedList<T> implements Queue<T> {
+class MyQueue<T> extends DoublyLinkedList<T> implements Queue<T> // Same for this: This is what the operations are
+{
 
     @Override
-    public void enqueue(T item) {
+    public void enqueue(T item)
+    {
         addLast(item);
     }
 
     @Override
-    public T dequeue() {
+    public T dequeue()
+    {
         return removeFirst();
     }
 
     @Override
-    public T front() {
+    public T front()
+    {
         return (head != null) ? head.data : null;
     }
 
     @Override
-    public boolean isEmpty() {
+    public boolean isEmpty()
+    {
         return size == 0;
     }
   } 
 
-public class StackandQueue
+public class StackandQueue // Where we print everything out
 {
 
-    public static void main(String[] args) {
+    public static void main(String[] args)
+    {
 
         System.out.println(" STACK TEST ");
         MyStack<Integer> stack = new MyStack<>();
