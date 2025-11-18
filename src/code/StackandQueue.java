@@ -177,7 +177,7 @@ class MyQueue<T> extends DoublyLinkedList<T> implements Queue<T> // Same for thi
     }
   } 
 
-public class StackandQueue // Where we print everything out
+public class StackandQueue // Where we print everything out, the mainDemo
 {
 
     public static void main(String[] args)
